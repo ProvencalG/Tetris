@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ParticleTrigger : MonoBehaviour
 {
-    public ParticleSystem[] allParticles;
+    ParticleSystem[] allParticles;
     // Start is called before the first frame update
     void Start()
     {

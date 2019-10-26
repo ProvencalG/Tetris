@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class Holder : MonoBehaviour
 {
-    public Transform m_holderXform;
-    public Shape m_heldShape = null;
+    [SerializeField] Transform m_holderXform;
+    [HideInInspector] public Shape m_heldShape = null;
 
-    [SerializeField]
-    float m_heldShapeScale = 0.5f;
+    [SerializeField] float m_heldShapeScale = 0.5f;
 
-    public bool m_canRelease = false;
+    [HideInInspector] public bool m_canRelease = false;
 
     public void Catch(Shape shape)
     {

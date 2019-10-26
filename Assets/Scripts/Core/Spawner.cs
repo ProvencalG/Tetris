@@ -4,16 +4,14 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public Shape[] m_allShapes;
-    public Transform[] m_queuedXforms = new Transform[3];
+    [SerializeField] Shape[] m_allShapes;
+    [SerializeField] Transform[] m_queuedXforms = new Transform[3];
 
-    [SerializeField]
-    ParticleTrigger m_spawnFX;
+    [SerializeField] ParticleTrigger m_spawnFX;
 
     Shape[] m_queuedShapes = new Shape[3];
 
-    [SerializeField]
-    float m_queueShapeScale = 0.7f;
+    [SerializeField] float m_queueShapeScale = 0.7f;
     
     // Must be initialized in the Start of the GameController to avoid conflict
     public void InitQueue()

@@ -14,15 +14,14 @@ public class GameController : MonoBehaviour
 
     Vector3 m_boardCenterPosition;
 
-    [SerializeField]
-    ParticleTrigger m_gameOverFx;
+    [SerializeField] ParticleTrigger m_gameOverFx;
 
     // Initial interval of time between active shape drops
-    public float m_dropInterval = 0.6f;
+    [SerializeField] float m_dropInterval = 0.6f;
     // Modified version of the drop interval, it changes during the game
     float m_dropIntervalModded;
 
-    public float m_dropIntervalAcceleration = 0.05f;
+    [SerializeField] float m_dropIntervalAcceleration = 0.05f;
 
     // Time use to check when the active shape should drop
     float m_timeToDrop;
@@ -39,23 +38,22 @@ public class GameController : MonoBehaviour
 
     // Delay of time it takes to land after a drop
     [Range(0.01f,1f)]
-    [SerializeField]
-    float m_landingWithDropDelay = 0.2f;
+    [SerializeField] float m_landingWithDropDelay = 0.2f;
 
     // Maximum delay for a drop landing
     [Range(0.01f,10f)]
-    [SerializeField]
-    float m_maxLandingWithDropDelay = 0.8f;
+    [SerializeField] float m_maxLandingWithDropDelay = 0.8f;
 
     [Range(0.02f,1f)]
-    public float m_keyRepeatRateLeftRight = 0.1f;
+    [SerializeField] float m_keyRepeatRateLeftRight = 0.1f;
+
     [Range(0.02f,1f)]
-    public float m_firstKeyRepeatRateLeftRight = 0.3f;
+    [SerializeField] float m_firstKeyRepeatRateLeftRight = 0.3f;
     float keyRepeatRateLeftRight;
     float m_timeToNextKeyLeftRight;
 
     [Range(0.01f,0.5f)]
-    public float m_keyRepeatRateDown = 0.05f;
+    [SerializeField] float m_keyRepeatRateDown = 0.05f;
     float m_timeToNextKeyDown ;
 
     bool m_gameOver = false;
@@ -63,13 +61,13 @@ public class GameController : MonoBehaviour
     // Is the shape landing
     bool isLanding = false;
 
-    public GameObject m_gameOverPanel;
+    [SerializeField] GameObject m_gameOverPanel;
 
-    public IconToggle m_rotIconToggle;
+    [SerializeField] IconToggle m_rotIconToggle;
     bool m_rotClockwise = true;
 
-    public bool m_isPaused = false;
-    public GameObject m_pausePanel;
+    bool m_isPaused = false;
+    [SerializeField] GameObject m_pausePanel;
 
     GhostProjector m_ghost;
 
@@ -318,7 +316,7 @@ public class GameController : MonoBehaviour
         m_timeToLand += 2*m_landingWithDropDelay;
     }
 
-    public void Hold()
+    void Hold()
     {
         if (!m_holder)
         {
@@ -414,7 +412,7 @@ public class GameController : MonoBehaviour
     }
 
     // Linked in the inspector to the restart button
-    public void Restart()
+    void Restart()
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("Game");
@@ -450,7 +448,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void ToggleRotDirection()
+    void ToggleRotDirection()
     {
         m_rotClockwise = !m_rotClockwise;
 
@@ -460,7 +458,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void TogglePause()
+    void TogglePause()
     {
         if (m_gameOver)
         {

@@ -7,10 +7,10 @@ using UnityEngine.UI;
 public class TimedFader : MonoBehaviour
 {
 
-    public float m_startAlpha = 1f;
-    public float m_targetAlpha = 0f;
-    public float m_delay = 0f;
-    public float m_timeToFade = 1f;
+    [SerializeField] float m_startAlpha = 1f;
+    [SerializeField] float m_targetAlpha = 0f;
+    [SerializeField] float m_delay = 0f;
+    [SerializeField] float m_timeToFade = 1f;
 
     float m_inc;
     float m_currentAlpha;

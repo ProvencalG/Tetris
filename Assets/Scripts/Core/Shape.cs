@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Shape : MonoBehaviour
 {
-public bool m_canRotate = true;
+[SerializeField] bool m_canRotate = true;
 
 GameObject[] m_bottomHitSquareFX;
 GameObject[] m_snapShapeFX;
-public string m_bottomHitSquareTag;
-public string m_snapShapeFXTag;
+[SerializeField] string m_bottomHitSquareTag;
+[SerializeField] string m_snapShapeFXTag;
 
 void Start() 
 {
@@ -100,7 +100,7 @@ public Vector3 m_visualCenterOffset;
     }
 
     // Rotate the object 90 degres clockwise
-    public void RotateRight()
+    void RotateRight()
     {
         if(m_canRotate)
         {
@@ -114,7 +114,7 @@ public Vector3 m_visualCenterOffset;
     }
 
     // Rotate the object 90 degres counter clockwise
-    public void RotateLeft()
+    void RotateLeft()
     {
         if(m_canRotate)
         {

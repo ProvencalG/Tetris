@@ -9,21 +9,21 @@ public class ScoreManager : MonoBehaviour
 
     int m_score = 0;
     int m_lines;
-    public int m_level;
+    [HideInInspector] public int m_level;
 
-    public bool m_didLevelUp = false;
+    [HideInInspector] public bool m_didLevelUp = false;
 
-    public int m_scorePadLength = 5;
+    [SerializeField] int m_scorePadLength = 5;
 
-    public int m_linesPerLevel;
+    [SerializeField] int m_linesPerLevel;
     const int m_minLines = 1;
     const int m_maxLines = 4;
 
-    public TMP_Text m_linesText;
-    public TMP_Text m_levelText;
-    public TMP_Text m_scoreText;
+    [SerializeField] TMP_Text m_linesText;
+    [SerializeField] TMP_Text m_levelText;
+    [SerializeField] TMP_Text m_scoreText;
 
-    public ParticleTrigger m_levelUpFx;
+    [SerializeField] ParticleTrigger m_levelUpFx;
 
     public void ScoreLines(int n)
     {
@@ -58,7 +58,7 @@ public class ScoreManager : MonoBehaviour
         UpdateUIText();
     }
 
-    public void Reset()
+    void Reset()
     {
         m_level = 1;
         m_lines = m_linesPerLevel * m_level;
@@ -71,7 +71,7 @@ public class ScoreManager : MonoBehaviour
         Reset();
     }
 
-    public void LevelUp()
+    void LevelUp()
     {
        m_level++;
        m_lines += (m_linesPerLevel * m_level);

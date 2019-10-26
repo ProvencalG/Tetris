@@ -4,23 +4,22 @@ using UnityEngine;
 
 public class Board : MonoBehaviour
 {
-    public Transform m_spriteToDraw;
+    [SerializeField] Transform m_spriteToDraw;
 
     public int m_boardHeight = 30;
     public int m_boardWidth = 10;
-    public int m_header = 8;
+    [SerializeField] int m_header = 8;
 
     // Store inactive shapes that have landed here
     Transform[,] m_grid;
 
-    public int m_completedRows = 0;
+    [HideInInspector] public int m_completedRows = 0;
 
-    [SerializeField]
-    float m_gridLandingDelay = 0.2f;
+    [SerializeField] float m_gridLandingDelay = 0.2f;
 
-    public ParticleTrigger[] m_rowGlowFX = new ParticleTrigger[4];
+    [SerializeField] ParticleTrigger[] m_rowGlowFX = new ParticleTrigger[4];
 
-    public bool isClearingRows = false;
+    [HideInInspector] public bool isClearingRows = false;
 
     void Awake() 
     {

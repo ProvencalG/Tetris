@@ -8,11 +8,9 @@ public class SoundManager : MonoBehaviour
 
     public bool m_sfxEnabled = true;
 
-    [Range(0,1)]
-    public float m_musicVolume = 1.0f;
+    [Range(0,1)] public float m_musicVolume = 1.0f;
 
-    [Range(0,1)]
-    public float m_sfxVolume = 1.0f;
+    [Range(0,1)] public float m_sfxVolume = 1.0f;
 
     public AudioClip m_clearRowSound;
     public AudioClip m_tetrisSound;
@@ -36,12 +34,12 @@ public class SoundManager : MonoBehaviour
         UpdateMusic();
     }
 
-    public AudioClip GetRandomClip(AudioClip[] clips)
+    AudioClip GetRandomClip(AudioClip[] clips)
     {
         AudioClip activeMusicClip = clips[Random.Range(0, clips.Length)];
         return activeMusicClip;
     }
-    public void PlayBackgroundMusic(AudioClip musicClip)
+    void PlayBackgroundMusic(AudioClip musicClip)
     {
         // Quit command if music is disabled or if source or clip are missing
         if (!m_musicEnabled || !m_musicSource || !musicClip)
@@ -64,7 +62,7 @@ public class SoundManager : MonoBehaviour
         m_musicSource.Play();
     }
 
-    public void ToggleMusic()
+    void ToggleMusic()
     {
         m_musicEnabled = !m_musicEnabled;
         UpdateMusic();
@@ -80,7 +78,7 @@ public class SoundManager : MonoBehaviour
         m_musicSource.mute = !m_musicEnabled;
     }
 
-    public void ToggleSFX()
+    void ToggleSFX()
     {
         m_sfxEnabled = !m_sfxEnabled;
 

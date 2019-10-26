@@ -6,10 +6,10 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Image))]
 public class IconToggle : MonoBehaviour
 {
-    public Sprite m_iconTrue;
-    public Sprite m_iconFalse;
+    [SerializeField] Sprite m_iconTrue;
+    [SerializeField] Sprite m_iconFalse;
 
-    public bool m_defaultIconState = true;
+    [SerializeField] bool m_defaultIconState = true;
 
     Image m_image;
 

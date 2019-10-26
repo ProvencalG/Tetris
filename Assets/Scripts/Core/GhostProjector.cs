@@ -5,10 +5,10 @@ using UnityEngine;
 public class GhostProjector : MonoBehaviour
 {
     Shape m_ghostShape = null;
-    public bool m_hitBottom = false;
-    public Color m_color = new Color (1f, 1f, 1f, 0.15f);
+    bool m_hitBottom = false;
+    [SerializeField] Color m_color = new Color (1f, 1f, 1f, 0.15f);
 
-    public Vector3 validGhostPosition;
+    [HideInInspector] public Vector3 validGhostPosition;
 
     public void DrawGhost(Shape originalShape, Board gameBoard)
     {
